@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task2</title>
+        <link rel="stylesheet" href="style/task2.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+
+        <style>
+            h1,h2,h3,h4,h5,h6, .nav a, .logo, .title {
+                font-family: "Playfair Display", serif;
+                letter-spacing: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Section 1: Header + navBar -->
+        <header>
+            <nav class="nav">
+                <div class="logo">Gourmet au Catering</div>
+                <div class="links">
+                    <ul>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="#Menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <h1 class="title">Le Catering</h1>
+        </header>
+
+        
+        <!-- Section 2: left image + right info -->
+        <div class="section" id="About">
+            <img class="left-img" src="media/tablesetting2.jpg" alt="tablesetting">
+            <div class="right-info">
+                <h1>About Catering</h1>
+                <p class="main-para">Tradition since 1889</p>
+                <p class="black-para">
+                    The Catering was founded in blabla by Mr. Smith in lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. We only use <mark style="background-color:#f1f1f1; padding: 5px;">seasonal</mark> ingredients.
+                </p>
+                <p class="gray-para">
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum consectetur adipiscing
+                    elit, sed do eiusmod temporincididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <!-- Section 3: Right image + left info -->
+        <div class="section" id="Menu">
+            <div class="left-info">
+                <h2>Our Menu</h2>
+                <div class="part">
+                    <p class="p-title">Bread Basket</p>
+                    <p class="p-info">Assortment of fresh baked fruit breads and muffins 5.50</p>
+                </div>
+                <div class="part">
+                    <p class="p-title">Honey Almond Granola with Fruits</p>
+                    <p class="p-info">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p>
+                </div>
+                <div class="part">
+                    <p class="p-title">Belgian Waffle</p>
+                    <p class="p-info">Vanilla flavored batter with malted flour 7.50</p>
+                </div>
+                <div class="part">
+                    <p class="p-title">Scrambled eggs</p>
+                    <p class="p-info">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p>
+                </div>
+                <div class="part">
+                    <p class="p-title">Blueberry Pancakes</p>
+                    <p class="p-info">With syrup, butter and lots of berries 8.50</p>
+                </div>
+            </div>
+            <div class="right-img">
+                <img src="media/tablesetting.jpg" alt="tablesetting">
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <!-- Contact Section -->
+        <div class="contact" id="contact">
+            <h2>Contact</h2>
+            <p> 
+                We offer full-service catering for any event,
+                large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.
+                Do not hesitate to contact us.
+            </p>
+
+            <p class="p-color">Catering Service, 42nd Living St, 43043 New York, NY</p>
+            <p>
+                You can also contact us by phone 00553123-2323 or 
+                email catering@catering.com, 
+                or you can send us a message here:
+            </p>
+
+            <form method="post">
+                <input type="text" name="name" placeholder="Name">
+                <input type="number" name="pepole-No." placeholder="How many people">
+                <input type="datetime-local" name="date">
+                <input type="text" name="message" placeholder="Message \ Special requirements">
+
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <p>Powered by <a href="">W3.css</a></p>
+        </footer>
+    </body>
+</html>
