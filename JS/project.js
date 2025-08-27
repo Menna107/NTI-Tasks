@@ -46,43 +46,61 @@ window.onload = function() {
   filterSelection("all");
 };
 
+// Search Icon
+var lightBoxContainer = document.getElementById('lightBoxContainer');
+var lightBoxItem = document.getElementById('lightBoxItem');
+var prevBtn = document.getElementById('prevBtn');
+var nextBtn = document.getElementById('nextBtn');
+var closeBtn = document.getElementById('closeBtn');
 
-// GSAP Library
-gsap.utils.toArray('section').forEach(section => {
-    if(section.querySelectorAll('.fade-card').length === 0){
-        gsap.fromTo(section,
-            { opacity: 0, y: 30 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,  
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                }
-            }
-        );
-    }
+var searchIcons = Array.from(document.querySelectorAll('.right-icons .search'));
+var items = Array.from(document.querySelectorAll('.filter-item')); 
+var currentIndex = 0;
+
+function showLightBox(index) {
+  let parent = items[index];
+  let imgSrc = parent.querySelector('img').getAttribute('src');
+  let title = parent.querySelector('h4').innerText;
+
+  lightBoxItem.innerHTML = `
+    <img src="${imgSrc}" class="lightbox-img">
+    <div class="lightbox-text">
+      <h4>${title}</h4>
+    </div>
+  `;
+
+  lightBoxContainer.style.display = 'flex';
+  currentIndex = index;
+}
+
+searchIcons.forEach((icon, i) => {
+  icon.addEventListener('click', () => {
+    showLightBox(i);
+  });
 });
 
-gsap.utils.toArray('section').forEach(section => {
-    const cards = section.querySelectorAll('.fade-card');
-    if(cards.length > 0){
-        gsap.fromTo(cards,
-            { opacity: 0, y: 20 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.4,
-                stagger: 0.15,  
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                }
-            }
-        );
-    }
-});
+prevBtn.onclick = function() {
+  currentIndex = (currentIndex - 1 + items.length) % items.length;
+  showLightBox(currentIndex);
+};
 
+nextBtn.onclick = function() {
+  currentIndex = (currentIndex + 1) % items.length;
+  showLightBox(currentIndex);
+};
+
+closeBtn.onclick = function() {
+  lightBoxContainer.style.display = 'none';
+};
+
+document.addEventListener("keydown", function(e) {
+  if (lightBoxContainer.style.display === "flex") {
+    if (e.key === "ArrowRight") {
+      nextBtn.click();
+    } else if (e.key === "ArrowLeft") {
+      prevBtn.click();
+    } else if (e.key === "Escape") {
+      closeBtn.click();
+    }
+  }
+});

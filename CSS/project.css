@@ -390,6 +390,7 @@ header > p{
 }
 
 /* ---------------portfolio Section------------- */
+
 .portfolio {
   background-color: white;
   width: 100%;
@@ -410,7 +411,7 @@ header > p{
 }
 
 .all-btn:hover, .app-btn:hover, 
-.web-btn:hover, .card-btn:hover{
+.web-btn:hover, .crd-btn:hover{
   color: white;
   background-color: rgb(228, 60, 92);
 }
@@ -469,6 +470,7 @@ header > p{
 
 .right-icons .search:hover, .right-icons .link:hover{
   color: rgb(228, 60, 92);
+  cursor: pointer;
 }
 
 .portfolio-wrap:hover .portfolio-info{
@@ -480,6 +482,99 @@ header > p{
   color: white;
 }
 
+.imgs-grid {
+  margin-top: 40px;
+  column-count: 3;
+  column-gap: 15px;
+}
+
+.filter-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+
+#lightBoxContainer {
+    display: none; 
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9); 
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+}
+
+#lightBoxItem {
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10000;
+}
+
+.lightbox-img {
+  width: 100%;
+  height: calc(100% - 12%); 
+  object-fit: cover;
+}
+
+.lightbox-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: rgb(68, 68, 68);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#lightBoxItem .lightbox-text {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9); 
+    font-family: Nunito;
+    font-size: 24px;
+    text-align: left;
+}
+
+#prevBtn, #nextBtn, #closeBtn {
+    position: absolute;
+    background-color: rgba(0,0, 0, 0.9);
+    color: white;
+    font-size: 30px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prevBtn:hover, #nextBtn:hover, #closeBtn:hover {
+    background-color: rgb(19, 19, 19);
+}
+
+#prevBtn {
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#nextBtn {
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#closeBtn {
+    top: 10px;
+    right: 20px;
+}
 
 
 /* ------------Prices Section-------------- */
@@ -657,6 +752,9 @@ header > p{
   background-color: #fff5f7; 
 }
 
+.accordion-button:hover{
+  color: rgb(228, 60, 92);
+}
 .accordion-item:has(.accordion-button:not(.collapsed)) {
   border-color: #f5c6d8;
 }
@@ -1176,5 +1274,11 @@ footer ul li:hover {
   }
   .mt-140{
     margin-top: 0.9375rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .imgs-grid {
+    column-count: 1; 
   }
 }
